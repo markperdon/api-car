@@ -70,7 +70,7 @@ class Cars {
                 id = :id';
 
         $stmt = $this->conn->prepare($query);
-        
+        //clean the data for security
         $this->name = htmlspecialchars(strip_tags($this->name));
         $this->car_type = htmlspecialchars(strip_tags($this->car_type));
         $this->car_model = htmlspecialchars(strip_tags($this->car_model));
@@ -95,7 +95,7 @@ class Cars {
                     WHERE id = :id';
 
         $stmt = $this->conn->prepare($query);
-
+        //clean the data for security       
         $this->id = htmlspecialchars(strip_tags($this->id));
         
         $stmt->bindParam(':id', $this->id);
