@@ -19,7 +19,6 @@
             </h3>
 
             <p>Car Api test</p>
-            https://www.getpostman.com/collections/477435b2c693e6fe6dfd
         </div>
         </div>
         
