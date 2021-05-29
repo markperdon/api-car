@@ -1,3 +1,11 @@
 RewriteEngine On # Turn on the rewriting engine
 RewriteRule ^create/?$ create.php [NC,L]
 RewriteRule ^create/([0-9]+)/?$ create.php?id=$1 [NC,L]
+RewriteRule ^read/?$ read.php [NC,L]
+RewriteRule ^read/([0-9]+)/?$ read.php?id=$1 [NC,L]
+RewriteRule ^read-single/?$ read-single.php [NC,L]
+RewriteRule ^read-single/([0-9]+)/?$ read-single.php?id=$1 [NC,L]
+RewriteRule ^update/?$ update.php [NC,L]
+RewriteRule ^update/([0-9]+)/?$ update.php?id=$1 [NC,L]
+RewriteRule ^delete/?$ delete.php [NC,L]
+RewriteRule ^delete/([0-9]+)/?$ delete.php?id=$1 [NC,L]
