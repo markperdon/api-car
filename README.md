@@ -25,12 +25,13 @@ POST CREATE
 localhost/api-car/api/create
 
 BODY raw
+```javascript
 {
     "name":"ford",
     "car_type" : "sedan",
     "car_model" : "ford focus"
 }
-
+```
 GET READ
 localhost/api-car/api/read
 
