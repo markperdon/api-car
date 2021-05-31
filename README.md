@@ -2,11 +2,16 @@
  cartrack exam
 https://documenter.getpostman.com/view/15713926/TzXzCwiD
 
+
+Software Used:
+xampp-windows-x64-7.4.12-0-VC15-installer.exe - [Link](https://www.apachefriends.org/download.html)
+postgresql-13.3-2-windows-x64.exe               [Link](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+
 #INSTALLATION
 ```
 git clone https://github.com/markperdon/api-car.git
 ```
-or copy to htdocs
+or copy to C:\xampp\htdocs
 
 
 
