@@ -2,6 +2,13 @@
  cartrack exam
 https://documenter.getpostman.com/view/15713926/TzXzCwiD
 
+#INSTALLATION
+```
+git clone https://github.com/markperdon/api-car.git
+```
+or copy to htdocs
+
+
 
 
 #API DOCUMENTATION
