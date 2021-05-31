@@ -4,24 +4,24 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Methons: DELETE');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
-include_once '../config/Database.php';
-include_once '../models/Cars.php';
+include_once '../../config/Database.php';
+include_once '../../models/Products.php';
 
 $database = new Database();
 $db = $database->connect();
-$cars = new Cars($db);
+$products = new Products($db);
 
 $data = json_decode(file_get_contents('php://input'));
 
-$cars->id = $data->id;
+$products->product_sid = $data->product_sid;
 
-if($cars->delete()) {
+if($products->delete()) {
     echo json_encode(
-        array('message' => 'Car Deleted')
+        array('message' => 'Product Deleted')
     );
 } else {
     echo json_encode(
-        array('message' => 'Car not deleted')
+        array('message' => 'Product not deleted')
     );
 }
 

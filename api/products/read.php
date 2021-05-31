@@ -1,35 +1,38 @@
 <?php
 header('Content-Type: application/json');
-include_once '../config/Database.php';
-include_once '../models/Cars.php';
+include_once '../../config/Database.php';
+include_once '../../models/Products.php';
 
 $database = new Database();
 $db = $database->connect();
 
-$cars = new Cars($db);
+$products = new Products($db);
 
-$result = $cars->read();
+$result = $products->read();
 
 
 $num = $result->rowCount();
 
 if($num > 0){
-    $car_arr = array();
-    $car_arr['data'] = array();
+    $products_arr = array();
+    $products_arr['data'] = array();
 
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         extract($row);
-        $car_item = array(
+        $prod_item = array(
             'product_sid'        => $product_sid,
             'product_name'      => $product_name,
             'product_desc'  => $product_desc,
-            'product_price' => $product_desc
+            'product_price' => $product_price
         );
-        array_push($car_arr['data'], $car_item);
+        array_push($products_arr['data'], $prod_item);
     }
-    echo json_encode($car_arr);
+    echo json_encode($products_arr);
 }else{
     echo json_encode(
         array('message' => 'no data')
     );
 }
+
+
+?>

@@ -1,113 +1,128 @@
 <?php
-class Cars {
-    private $conn;
-    private $table = 'api_db.tblproduct';
+    class Products {
+        private $conn;
+        private $table = 'api_db.tblproduct';
+        //properties
+        public $product_sid;
+        public $product_name;
+        public $product_desc;
+        public $product_price;
 
-    public $product_sid;
-    public $product_name;
-    public $product_desc;
-    public $product_price;
-
-    public function __construct($db) {
-        $this->conn = $db;
-    }
-    
-    public function create() {
-        $cars = array();
-        $query = 'INSERT INTO '. $this->table .
-            '(name, car_type, car_model) VALUES     
-            (:name, :car_type, :car_model)';
-        
-        $stmt = $this->conn->prepare($query);
-
-        //clean the data for security
-        $this->name = htmlspecialchars(strip_tags($this->name));
-        $this->car_type = htmlspecialchars(strip_tags($this->car_type));
-        $this->car_model = htmlspecialchars(strip_tags($this->car_model));
-        
-        $stmt->bindParam(':name', $this->name);
-        $stmt->bindParam(':car_type', $this->car_type);
-        $stmt->bindParam(':car_model', $this->car_model);
-        
-        if($stmt->execute()) {
-            return true;
+        public function __construct($db) {
+            $this->conn = $db;
         }
-        printf('Error: %s .\n', $stmt->error);
-        return false;
-    }
-    
-    public function read() {
-        $query = "SELECT * FROM " . $this->table . " ORDER BY product_sid";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-
-        return $stmt;
-    }
-
-    public function read_single() {
-        $query = 'SELECT * FROM ' . $this->table . ' WHERE id = ? LIMIT 1';
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(1, $this->id);
-        $stmt->execute();
-
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        $this->name = $row['name'];
-        $this->car_type = $row['car_type'];
-        $this->car_model = $row['car_model'];
         
-        return $stmt;
-    }
+        public function create() {
+            $cars = array();
+            $query = 'INSERT INTO '. $this->table .
+                '(product_name, product_desc, product_price) VALUES     
+                (:product_name, :product_desc, :product_price)';
+            
+            $stmt = $this->conn->prepare($query);
 
-    public function update() {
-        $query = 'UPDATE ' . $this->table . 
-                ' SET 
-                name = :name,
-                car_type = :car_type,
-                car_model = :car_model
-                WHERE
-                id = :id';
+            //clean the data for security
+            $this->product_name = htmlspecialchars(strip_tags($this->product_name));
+            $this->product_desc = htmlspecialchars(strip_tags($this->product_desc));
+            $this->product_price = htmlspecialchars(strip_tags($this->product_price));
+            
+            $stmt->bindParam(':product_name', $this->product_name);
+            $stmt->bindParam(':product_desc', $this->product_desc);
+            $stmt->bindParam(':product_price', $this->product_price);
+            
+            if($stmt->execute()) {
+                return true;
+            }
+            printf('Error: %s .\n', $stmt->error);
+            return false;
+        }
+        
+        public function read() {
+            $query = "SELECT * FROM " . $this->table . " ORDER BY product_sid";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
 
-        $stmt = $this->conn->prepare($query);
-        //clean the data for security
-        $this->name = htmlspecialchars(strip_tags($this->name));
-        $this->car_type = htmlspecialchars(strip_tags($this->car_type));
-        $this->car_model = htmlspecialchars(strip_tags($this->car_model));
-        $this->id = htmlspecialchars(strip_tags($this->id));
-
-        $stmt->bindParam(':name', $this->name);
-        $stmt->bindParam(':car_type', $this->car_type);
-        $stmt->bindParam(':car_model', $this->car_model);
-        $stmt->bindParam(':id', $this->id);
-
-        if($stmt->execute()){
-            return true;
+            return $stmt;
         }
 
-        printf("error: %s.\n",$stmt->error);
+        public function read_single() {
+            $query = 'SELECT * FROM ' . $this->table . ' WHERE product_sid = ? LIMIT 1';
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(1, $this->product_sid);
+            $stmt->execute();
 
-        return false;
-        
-    }
-    public function delete() {
-        $query = 'DELETE FROM ' . $this->table .'
-                    WHERE id = :id';
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $stmt = $this->conn->prepare($query);
-        //clean the data for security       
-        $this->id = htmlspecialchars(strip_tags($this->id));
-        
-        $stmt->bindParam(':id', $this->id);
-        
-        if($stmt->execute()){
-            return true;
+            $this->product_name = $row['product_name'];
+            $this->product_desc = $row['product_desc'];
+            $this->product_price = $row['product_price'];
+            
+            return $stmt;
         }
 
-        printf("error: %s.\n",$stmt->error);
+        public function update() {
+            $query = 'UPDATE ' . $this->table . 
+                    ' SET 
+                    product_name = :product_name,
+                    product_desc = :product_desc,
+                    product_price = :product_price
+                    WHERE
+                    product_sid = :product_sid';
 
-        return false;
+            $stmt = $this->conn->prepare($query);
+            //clean the data for security
+            $this->product_name = htmlspecialchars(strip_tags($this->product_name));
+            $this->product_desc = htmlspecialchars(strip_tags($this->product_desc));
+            $this->product_price = htmlspecialchars(strip_tags($this->product_price));
+            $this->product_sid = htmlspecialchars(strip_tags($this->product_sid));
+
+            $stmt->bindParam(':product_name', $this->product_name);
+            $stmt->bindParam(':product_desc', $this->product_desc);
+            $stmt->bindParam(':product_price', $this->product_price);
+            $stmt->bindParam(':product_sid', $this->product_sid);
+
+            if($stmt->execute()){
+                return true;
+            }
+
+            printf("error: %s.\n",$stmt->error);
+
+            return false;
+            
+        }
+        public function delete() {
+            $query = 'DELETE FROM ' . $this->table .'
+                        WHERE product_sid = :product_sid';
+
+            $stmt = $this->conn->prepare($query);
+            //clean the data for security       
+            $this->product_sid = htmlspecialchars(strip_tags($this->product_sid));
+            
+            $stmt->bindParam(':product_sid', $this->product_sid);
+            
+            if($stmt->execute()){
+                return true;
+            }
+
+            printf("error: %s.\n",$stmt->error);
+
+            return false;
+        }
+        public function search() {
+            $query = 'SELECT * FROM ' . $this->table . '
+                        WHERE product_name = :product_name';
+            $stmt = $this->conn->prepare($query);
+            
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $this->product_name = $row['product_name'];
+            $this->product_desc = $row['product_desc'];
+            $this->product_price = $row['product_price'];
+            
+
+            return $stmt;
+
+        }
+        
     }
-    
-}
 
 ?>

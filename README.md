@@ -35,11 +35,11 @@ BODY raw
 ```
 GET READ
 ```javascript
-localhost/api-car/api/read
+localhost/api-car/api/products/read
 ```
 GET READ SINGLE
 ```javascript
-localhost/api-car/api/update?id=7
+localhost/api-car/api/products/update?id=7
 ```
 PARAMS
 id 7
@@ -47,7 +47,7 @@ id 7
 
 PUT UPDATE
 ```javascript
-localhost/api-car/api/update?id=8
+localhost/api-car/api/products/update?id=8
 ```
 HEADERS
 Content-Type
@@ -68,7 +68,7 @@ BODY raw
 
 DEL DELETE
 ```javascript
-localhost/api-car/api/delete?id=8
+localhost/api-car/api/products/delete?id=8
 ```
 ```HEADERS
 Content-Type

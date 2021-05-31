@@ -15,10 +15,11 @@
         <div class="card mt-6">
         <div class="card-body">
             <h3 class="card-title">
-            Car API Docs
+             API Docs
             </h3>
 
-            <p>Car Api test</p>
+            <p> Api test</p>
+            
         </div>
         </div>
         
