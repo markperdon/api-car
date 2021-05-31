@@ -52,9 +52,10 @@ localhost/api-car/api/update?id=8
 HEADERS
 Content-Type
 application/json
-
+```
 PARAMS
 id 7
+```
 BODY raw
 ```javascript
 {
@@ -66,12 +67,16 @@ BODY raw
 ```
 
 DEL DELETE
+```javascript
 localhost/api-car/api/delete?id=8
-HEADERS
+```
+```HEADERS
 Content-Type
 application/json
-PARAMS
+```
+```PARAMS
 id 8
+```
 BODY raw
 ```javascript
 {
