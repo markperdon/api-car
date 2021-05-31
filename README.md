@@ -8,7 +8,7 @@ https://documenter.getpostman.com/view/15713926/TzXzCwiD
 
 ### [Link](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) postgresql-13.3-2-windows-x64.exe    ###
 
-#INSTALLATION
+# INSTALLATION #
 ```
 git clone https://github.com/markperdon/api-car.git
 ```
