@@ -14,7 +14,9 @@ git clone https://github.com/markperdon/api-car.git
 ```
 or copy to C:\xampp\htdocs
 
-
+### Enable extension pgsql ###
+![S1](/assets/img/ss1.png)
+![S2](/assets/img/ss2.png)
 
 
 #API DOCUMENTATION
