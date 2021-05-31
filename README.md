@@ -22,8 +22,9 @@ or copy to C:\xampp\htdocs
 # API DOCUMENTATION #
 
 POST CREATE
+```javascript
 localhost/api-car/api/create
-
+```
 BODY raw
 ```javascript
 {
@@ -33,18 +34,21 @@ BODY raw
 }
 ```
 GET READ
+```javascript
 localhost/api-car/api/read
-
+```
 GET READ SINGLE
+```javascript
 localhost/api-car/api/update?id=7
-
+```
 PARAMS
 id 7
 
 
 PUT UPDATE
+```javascript
 localhost/api-car/api/update?id=8
-
+```
 HEADERS
 Content-Type
 application/json
@@ -52,13 +56,14 @@ application/json
 PARAMS
 id 7
 BODY raw
+```javascript
 {
     "name":"ford",
     "car_type" : "sedan",
     "car_model" : "ford focus",
     "id" : "7"
 }
-
+```
 
 DEL DELETE
 localhost/api-car/api/delete?id=8
@@ -68,6 +73,8 @@ application/json
 PARAMS
 id 8
 BODY raw
+```javascript
 {
     "id" : "8"
 }   
+```
