@@ -20,10 +20,10 @@ if($num > 0){
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         extract($row);
         $car_item = array(
-            'id'        => $id,
-            'name'      => $name,
-            'car_type'  => $car_type,
-            'car_model' => $car_model
+            'product_sid'        => $product_sid,
+            'product_name'      => $product_name,
+            'product_desc'  => $product_desc,
+            'product_price' => $product_desc
         );
         array_push($car_arr['data'], $car_item);
     }
