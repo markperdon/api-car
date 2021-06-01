@@ -34,9 +34,8 @@ BODY raw
     "product_desc" : "colorful iphope",
     "product_price" : 1400
 }
-![S3](/assets/img/ss3.PNG)
-
 ```
+![S3](/assets/img/ss3.PNG)
 GET READ
 ```javascript
 localhost/api-car/api/products/read
