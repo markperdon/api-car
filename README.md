@@ -90,4 +90,11 @@ BODY raw
 ```
 ![S6](/assets/img/ss6.PNG)
 
+GETSEARCH
+```
+localhost/api-car/api/products/search?product_name=iPhone
+```
+```PARAMS
+product_name iPhone
+```
 ![S7](/assets/img/ss7.PNG)
