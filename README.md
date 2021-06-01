@@ -21,7 +21,7 @@ or copy to C:\xampp\htdocs
 ![S2](/assets/img/ss2.png)
 
 
-# PRODUCT API DOCUMENTATION #
+## CAR API DOCUMENTATION ##
 
 POST CREATE
 ```javascript
@@ -75,14 +75,14 @@ BODY raw
 
 DEL DELETE
 ```javascript
-localhost/api-car/api/cars/delete?id=8
+localhost/api-car/api/cars/delete?car_id=8
 ```
 ```HEADERS
 Content-Type
 application/json
 ```
 ```PARAMS
-id 8
+car_id 8
 ```
 BODY raw
 ```javascript
