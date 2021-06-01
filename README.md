@@ -47,23 +47,23 @@ localhost/api-car/api/cars/read
 
 GET READ SINGLE
 ```javascript
-localhost/api-car/api/cars/read-single?id=7
+localhost/api-car/api/cars/read-single?car_id=7
 ```
 PARAMS
-id 7
+car_id 7
 ![S4](/assets/img/ss4_1.PNG)
 
 
 PUT UPDATE
 ```javascript
-localhost/api-car/api/cars/update?id=8
+localhost/api-car/api/cars/update?car_id=8
 ```
 HEADERS
 Content-Type
 application/json
 ```
 PARAMS
-id 7
+car_id 7
 ```
 BODY raw
 ```javascript
