@@ -23,7 +23,7 @@ or copy to C:\xampp\htdocs
 
 POST CREATE
 ```javascript
-localhost/api-car/api/create
+localhost/api-car/api/products/create
 ```
 BODY raw
 ```javascript
