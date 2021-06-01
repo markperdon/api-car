@@ -30,28 +30,30 @@ localhost/api-car/api/products/create
 BODY raw
 ```javascript
 {
-    "product_name": "Lamborghini HURACÁN",
-    "product_desc": "sports car",
-    "product_price": "1500000.00"
+    "car_name": "Lamborghini",
+    "car_type": "sports car",
+    "car_model": "huracan"
 }
 ```
 ![S3](/assets/img/ss3.PNG)
 GET READ
 ```javascript
-localhost/api-car/api/products/read
+localhost/api-car/api/cars/read
 ```
+![S4](/assets/img/ss4.PNG)
+
 GET READ SINGLE
 ```javascript
-localhost/api-car/api/products/update?id=7
+localhost/api-car/api/cars/read-single?id=7
 ```
 PARAMS
 id 7
-![S4](/assets/img/ss4.PNG)
+![S4](/assets/img/ss4_1.PNG)
 
 
 PUT UPDATE
 ```javascript
-localhost/api-car/api/products/update?id=8
+localhost/api-car/api/cars/update?id=8
 ```
 HEADERS
 Content-Type
@@ -63,17 +65,17 @@ id 7
 BODY raw
 ```javascript
 {
-    "product_name":"lambo",
-    "product_desc" : "sports car",
-    "product_price" : 150000,
-    "product_sid" : "6"
+    "car_name":"lamborghini",
+    "car_type" : "sports car",
+    "car_model" : "aventador",
+    "car_id" : "1"
 }
 ```
 ![S5](/assets/img/ss5.PNG)
 
 DEL DELETE
 ```javascript
-localhost/api-car/api/products/delete?id=8
+localhost/api-car/api/cars/delete?id=8
 ```
 ```HEADERS
 Content-Type
@@ -85,16 +87,16 @@ id 8
 BODY raw
 ```javascript
 {
-    "product_sid" : "8"
+    "car_id" : "8"
 }   
 ```
 ![S6](/assets/img/ss6.PNG)
 
 GETSEARCH
 ```
-localhost/api-car/api/products/search?product_name=iPhone
+localhost/api-car/api/cars/search?car_name=lambo
 ```
 ```PARAMS
-product_name iPhone
+product_name "lambo"
 ```
 ![S7](/assets/img/ss7.PNG)

@@ -13,7 +13,7 @@
 
     $data = json_decode(file_get_contents('php://input'));
 
-    $cars->product_sid = $data->car_id;
+    $cars->car_id = $data->car_id;
 
     $cars->car_name = $data->car_name;
     $cars->car_type = $data->car_type;

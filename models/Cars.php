@@ -96,7 +96,7 @@
 
             $stmt = $this->conn->prepare($query);
             //clean the data for security       
-            $this->product_sid = htmlspecialchars(strip_tags($this->car_id));
+            $this->car_id = htmlspecialchars(strip_tags($this->car_id));
             
             $stmt->bindParam(':car_id', $this->car_id);
             
@@ -111,7 +111,7 @@
         // SEARCH
         public function search() {
             $car_name = preg_replace("#[^0-9a-z]#i","",$this->car_name);
-            $query = "SELECT * FROM " . $this->table . " WHERE product_name ILIKE '%$car_name%'";
+            $query = "SELECT * FROM " . $this->table . " WHERE car_name ILIKE '%$car_name%'";
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
             return $stmt;
