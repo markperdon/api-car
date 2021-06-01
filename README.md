@@ -8,6 +8,8 @@ https://documenter.getpostman.com/view/15713926/TzXzCwiD
 
 ### [Link](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) postgresql-13.3-2-windows-x64.exe    ###
 
+### [Link](https://www.postman.com/downloads/) postman 64bit    ###
+
 # INSTALLATION #
 ```
 git clone https://github.com/markperdon/api-car.git
@@ -32,6 +34,8 @@ BODY raw
     "product_desc" : "colorful iphope",
     "product_price" : 1400
 }
+![S3](/assets/img/ss3.PNG)
+
 ```
 GET READ
 ```javascript
@@ -43,6 +47,7 @@ localhost/api-car/api/products/update?id=7
 ```
 PARAMS
 id 7
+![S4](/assets/img/ss4.PNG)
 
 
 PUT UPDATE
@@ -65,6 +70,7 @@ BODY raw
     "product_sid" : "6"
 }
 ```
+![S5](/assets/img/ss5.PNG)
 
 DEL DELETE
 ```javascript
@@ -83,8 +89,6 @@ BODY raw
     "product_sid" : "8"
 }   
 ```
-![S3](/assets/img/ss3.PNG)
-![S4](/assets/img/ss4.PNG)
-![S5](/assets/img/ss5.PNG)
 ![S6](/assets/img/ss6.PNG)
+
 ![S7](/assets/img/ss7.PNG)
