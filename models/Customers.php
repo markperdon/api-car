@@ -42,16 +42,15 @@
         }
 
         public function read_single() {
-            $query = 'SELECT * FROM ' . $this->table . ' WHERE product_sid = ? LIMIT 1';
+            $query = 'SELECT * FROM ' . $this->table . ' WHERE customer_sid = ? LIMIT 1';
             $stmt = $this->conn->prepare($query);
-            $stmt->bindParam(1, $this->product_sid);
+            $stmt->bindParam(1, $this->customer_sid);
             $stmt->execute();
 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $this->product_name = $row['product_name'];
-            $this->product_desc = $row['product_desc'];
-            $this->product_price = $row['product_price'];
+            $this->customer_name = $row['customer_name'];
+            $this->customer_address = $row['customer_address'];
             
             return $stmt;
         }
@@ -59,23 +58,20 @@
         public function update() {
             $query = 'UPDATE ' . $this->table . 
                     ' SET 
-                    product_name = :product_name,
-                    product_desc = :product_desc,
-                    product_price = :product_price
+                    customer_name = :customer_name,
+                    customer_address = :customer_address,
                     WHERE
-                    product_sid = :product_sid';
+                    customer_sid = :customer_sid';
 
             $stmt = $this->conn->prepare($query);
             //clean the data for security
-            $this->product_name = htmlspecialchars(strip_tags($this->product_name));
-            $this->product_desc = htmlspecialchars(strip_tags($this->product_desc));
-            $this->product_price = htmlspecialchars(strip_tags($this->product_price));
-            $this->product_sid = htmlspecialchars(strip_tags($this->product_sid));
+            $this->customer_name = htmlspecialchars(strip_tags($this->customer_name));
+            $this->customer_address = htmlspecialchars(strip_tags($this->customer_address));
+            $this->customer_sid = htmlspecialchars(strip_tags($this->customer_sid));
 
-            $stmt->bindParam(':product_name', $this->product_name);
-            $stmt->bindParam(':product_desc', $this->product_desc);
-            $stmt->bindParam(':product_price', $this->product_price);
-            $stmt->bindParam(':product_sid', $this->product_sid);
+            $stmt->bindParam(':customer_name', $this->customer_name);
+            $stmt->bindParam(':customer_address', $this->customer_address);
+            $stmt->bindParam(':customer_sid', $this->customer_sid);
 
             if($stmt->execute()){
                 return true;

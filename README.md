@@ -28,9 +28,9 @@ localhost/api-car/api/create
 BODY raw
 ```javascript
 {
-    "name":"ford",
-    "car_type" : "sedan",
-    "car_model" : "ford focus"
+    "product_name":"iphone 5c",
+    "product_desc" : "colorful iphope",
+    "product_price" : 1400
 }
 ```
 GET READ
@@ -59,10 +59,10 @@ id 7
 BODY raw
 ```javascript
 {
-    "name":"ford",
-    "car_type" : "sedan",
-    "car_model" : "ford focus",
-    "id" : "7"
+    "name":"lambo",
+    "car_type" : "sports car",
+    "car_model" : "Sián Roadster",
+    "id" : "6"
 }
 ```
 
@@ -80,6 +80,6 @@ id 8
 BODY raw
 ```javascript
 {
-    "id" : "8"
+    "product_sid" : "8"
 }   
 ```
