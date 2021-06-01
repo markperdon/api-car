@@ -83,8 +83,8 @@ BODY raw
     "product_sid" : "8"
 }   
 ```
-![S3](/assets/img/ss3.png)
-![S4](/assets/img/ss4.png)
-![S5](/assets/img/ss5.png)
-![S6](/assets/img/ss6.png)
-![S7](/assets/img/ss7.png)
+![S3](/assets/img/ss3.PNG)
+![S4](/assets/img/ss4.PNG)
+![S5](/assets/img/ss5.PNG)
+![S6](/assets/img/ss6.PNG)
+![S7](/assets/img/ss7.PNG)
