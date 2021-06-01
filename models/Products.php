@@ -11,7 +11,7 @@
         public function __construct($db) {
             $this->conn = $db;
         }
-        
+        // CREATE
         public function create() {
             $cars = array();
             $query = 'INSERT INTO '. $this->table .
@@ -24,7 +24,7 @@
             $this->product_name = htmlspecialchars(strip_tags($this->product_name));
             $this->product_desc = htmlspecialchars(strip_tags($this->product_desc));
             $this->product_price = htmlspecialchars(strip_tags($this->product_price));
-            
+            //bind param
             $stmt->bindParam(':product_name', $this->product_name);
             $stmt->bindParam(':product_desc', $this->product_desc);
             $stmt->bindParam(':product_price', $this->product_price);
@@ -35,7 +35,7 @@
             printf('Error: %s .\n', $stmt->error);
             return false;
         }
-        
+        // READ
         public function read() {
             $query = "SELECT * FROM " . $this->table . " ORDER BY product_sid";
             $stmt = $this->conn->prepare($query);
@@ -58,7 +58,7 @@
             
             return $stmt;
         }
-
+        // UPDATE
         public function update() {
             $query = 'UPDATE ' . $this->table . 
                     ' SET 
@@ -74,7 +74,7 @@
             $this->product_desc = htmlspecialchars(strip_tags($this->product_desc));
             $this->product_price = htmlspecialchars(strip_tags($this->product_price));
             $this->product_sid = htmlspecialchars(strip_tags($this->product_sid));
-
+            //bind param
             $stmt->bindParam(':product_name', $this->product_name);
             $stmt->bindParam(':product_desc', $this->product_desc);
             $stmt->bindParam(':product_price', $this->product_price);
@@ -89,6 +89,7 @@
             return false;
             
         }
+        // DELETE
         public function delete() {
             $query = 'DELETE FROM ' . $this->table .'
                         WHERE product_sid = :product_sid';
@@ -107,20 +108,12 @@
 
             return false;
         }
+        // SEARCH
         public function search() {
-            $name = "%".$this->product_name."%";
-            $query = "SELECT * FROM " . $this->table . " WHERE product_name LIKE :product_name";
+            $prod_name = preg_replace("#[^0-9a-z]#i","",$this->product_name);
+            $query = "SELECT * FROM " . $this->table . " WHERE product_name ILIKE '%$prod_name%'";
             $stmt = $this->conn->prepare($query);
-            // $this->product_name = htmlspecialchars(strip_tags($name));
-            $stmt->bindParam(':product_name', $name);
             $stmt->execute();
-
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            // $this->product_name = $row['product_name'];
-            // $this->product_desc = $row['product_desc'];
-            // $this->product_price = $row['product_price'];
-            
             return $stmt;
         }
       

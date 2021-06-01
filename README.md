@@ -19,7 +19,7 @@ or copy to C:\xampp\htdocs
 ![S2](/assets/img/ss2.png)
 
 
-# API DOCUMENTATION #
+# PRODUCT API DOCUMENTATION #
 
 POST CREATE
 ```javascript
