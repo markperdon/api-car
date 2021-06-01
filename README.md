@@ -25,7 +25,7 @@ or copy to C:\xampp\htdocs
 
 POST CREATE
 ```javascript
-localhost/api-car/api/products/create
+localhost/api-car/api/cars/create
 ```
 BODY raw
 ```javascript
@@ -97,6 +97,6 @@ GETSEARCH
 localhost/api-car/api/cars/search?car_name=lambo
 ```
 ```PARAMS
-product_name "lambo"
+car_name "lambo"
 ```
 ![S7](/assets/img/ss7.PNG)
