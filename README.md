@@ -18,6 +18,9 @@ or copy to C:\xampp\htdocs
 
 ### Enable extension pgsql ###
 ![S1](/assets/img/ss1.png)
+
+Find extension=pdo_pgsql & extension=pgsql
+Remove ; at the beginning
 ![S2](/assets/img/ss2.png)
 
 
