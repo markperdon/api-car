@@ -30,9 +30,9 @@ localhost/api-car/api/products/create
 BODY raw
 ```javascript
 {
-    "product_name":"iphone 5c",
-    "product_desc" : "colorful iphope",
-    "product_price" : 1400
+    "product_name": "Lamborghini HURACÁN",
+    "product_desc": "sports car",
+    "product_price": "1500000.00"
 }
 ```
 ![S3](/assets/img/ss3.PNG)
