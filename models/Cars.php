@@ -7,6 +7,9 @@
         public $car_name;
         public $car_type;
         public $car_model;
+        public $max_speed;
+        public $current_speed;
+        public $availability;
 
         public function __construct($db) {
             $this->conn = $db;
