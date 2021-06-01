@@ -59,10 +59,10 @@ id 7
 BODY raw
 ```javascript
 {
-    "name":"lambo",
-    "car_type" : "sports car",
-    "car_model" : "Sián Roadster",
-    "id" : "6"
+    "product_name":"lambo",
+    "product_desc" : "sports car",
+    "product_price" : 150000,
+    "product_sid" : "6"
 }
 ```
 

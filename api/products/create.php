@@ -6,12 +6,10 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type
 
 include_once '../../config/Database.php';
 include_once '../../models/Products.php';
-include_once '../../models/Customers.php';
 
 $database = new Database();
 $db = $database->connect();
 $products = new Products($db);
-$customers = new Customers($db);
 
 $data = json_decode(file_get_contents('php://input'));
 if($data->product_name != null || $products->product_desc != null || $products->product_price != null)
@@ -29,19 +27,5 @@ if($data->product_name != null || $products->product_desc != null || $products->
         );
     }    
 }
-//customer
-$customers->customer_name = $data->customer_name;
-$customers->customer_address = $data->customer_address;
 
-
-
-if($customers->create()) {
-    echo json_encode(
-        array('message' => 'Customer was created')
-    );
-} else {
-    echo json_encode(
-        array('message' => 'Customer not created')
-    );
-}
 ?>

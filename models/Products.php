@@ -108,21 +108,22 @@
             return false;
         }
         public function search() {
-            $query = 'SELECT * FROM ' . $this->table . '
-                        WHERE product_name = :product_name';
+            $name = "%".$this->product_name."%";
+            $query = "SELECT * FROM " . $this->table . " WHERE product_name LIKE :product_name";
             $stmt = $this->conn->prepare($query);
-            
+            // $this->product_name = htmlspecialchars(strip_tags($name));
+            $stmt->bindParam(':product_name', $name);
+            $stmt->execute();
+
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $this->product_name = $row['product_name'];
-            $this->product_desc = $row['product_desc'];
-            $this->product_price = $row['product_price'];
+            // $this->product_name = $row['product_name'];
+            // $this->product_desc = $row['product_desc'];
+            // $this->product_price = $row['product_price'];
             
-
             return $stmt;
-
         }
-        
+      
     }
 
 ?>
